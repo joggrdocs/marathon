@@ -72,7 +72,7 @@ export const sample = {
 
 export function run(data: Schema) {
   if (!validate(data)) {
-    errors.createSchemaError('api-docs/terraform-module');
+    errors.createSchemaError('code-walkthrough/basic');
   }
   const doc = tempo()
     .h1(data.title)

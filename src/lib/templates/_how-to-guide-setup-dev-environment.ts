@@ -98,4 +98,3 @@ export function run(data: Schema) {
 
   return doc.toString();
 }
-

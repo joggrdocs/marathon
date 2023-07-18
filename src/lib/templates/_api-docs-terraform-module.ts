@@ -1,8 +1,8 @@
 import { FromSchema } from 'json-schema-to-ts';
-import tempo from '@joggr/tempo';
+// import tempo from '@joggr/tempo';
 
 import createSchemaValidator from '../schemaValidator';
-import * as errors from '../errors';
+// import * as errors from '../errors';
 
 const JsonSchema = {
   type: 'object',
@@ -99,49 +99,50 @@ Terraform module which creates S3 bucket on AWS with all (or almost all) feature
 
 These features of S3 bucket configurations are supported:
 
-static web-site hosting
-access logging
-versioning
-CORS
-lifecycle rules
-server-side encryption
-object locking
-Cross-Region Replication (CRR)
-ELB log delivery bucket policy
-ALB/NLB log delivery bucket policy
+* static web-site hosting
+* access logging
+* versioning
+* CORS
+* lifecycle rules
+* server-side encryption
+* object locking
+* Cross-Region Replication (CRR)
+* ELB log delivery bucket policy
+* ALB/NLB log delivery bucket policy
 `.trim(),
   usage: [],
   inputs: [],
   outputs: [],
-
+  requirements: []
 };
 
 export function run(data: Schema) {
-  if (!validate(data)) {
-    errors.createSchemaError('api-docs/terraform-module');
-  }
-  const doc = tempo()
-    .h1(data.title)
-    .paragraph(data.overview);
+  // if (!validate(data)) {
+  //   errors.createSchemaError('api-docs/terraform-module');
+  // }
+  // const doc = tempo()
+  //   .h1(data.title)
+  //   .paragraph(data.overview);
 
-  if (data.requirements && data.requirements.length > 0) {
-    doc.h2('Requirements');
-    for (const step of data.steps) {
-      doc
-        .h3(step.title)
-        .paragraph(step.content);
-    }
-  }
+  // if (data.requirements && data.requirements.length > 0) {
+  //   doc
+  //     .h2('Requirements')
+  //     .bulletList(
+  //       // Add ability to do "text"
+  //       data.requirements.map((r) => {
+  //         return r.link ? `[${r.text}](${r.link})` : r.text;
+  //       })
+  //     );
+  // }
 
-  if (data.steps.length > 0) {
-    doc.h2('Steps');
-    for (const step of data.steps) {
-      doc
-        .h3(step.title)
-        .paragraph(step.content);
-    }
-  }
+  // if (data.steps.length > 0) {
+  //   doc.h2('Steps');
+  //   for (const step of data.steps) {
+  //     doc
+  //       .h3(step.title)
+  //       .paragraph(step.content);
+  //   }
+  // }
 
   return doc.toString();
 }
-

@@ -72,7 +72,7 @@ export const sample = {
 
 export function run(data: Schema) {
   if (!validate(data)) {
-    errors.createSchemaError('code-walkthrough/basic');
+    errors.createSchemaError('how-to-guides/basic');
   }
   const doc = tempo()
     .h1(data.title)
@@ -98,5 +98,3 @@ export function run(data: Schema) {
 
   return doc.toString();
 }
-
-
