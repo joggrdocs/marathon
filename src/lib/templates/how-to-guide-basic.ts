@@ -12,9 +12,9 @@ import * as schema from '../schema';
 |
 */
 
-const name = 'how-to-guide-basic';
+export const name = 'how-to-guide-basic' as const;
 
-const JsonSchema = {
+export const JsonSchema = {
   type: 'object',
   required: ['title', 'overview', 'steps'],
   properties: {
