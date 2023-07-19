@@ -32,7 +32,7 @@ yarn add @joggrdocs/marathon
 import fs from 'node:fs/promises';
 import marathon from '@joggr/marathon';
 
-const result = marathon.render('api-basic', {
+const result = marathon.run('api-basic', {
     title: 'This is a title'
 });
 
