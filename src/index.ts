@@ -1,1 +1,1 @@
-export { default, getTemplate } from './render';
+export { default, getTemplate } from './runner';
