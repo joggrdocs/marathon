@@ -8,6 +8,8 @@
     </blockquote>
 </div>
 
+<br>
+
 <p align="center">
   <a href="https://badge.fury.io/js/@joggr%2Fmarathon">
     <img src="https://badge.fury.io/js/@joggr%2Fmarathon.svg" alt="npm version">
