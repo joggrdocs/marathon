@@ -8,7 +8,7 @@ export type TemplateData<T> =
 
 export function getTemplate<T = Template>(name: T) {
   switch (name) {
-    case howToGuideBasic:
+    case howToGuideBasic.name:
       return howToGuideBasic;
     default:
       throw new Error(`Unknown template: ${name}`);
