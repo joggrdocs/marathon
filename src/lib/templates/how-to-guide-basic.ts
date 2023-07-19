@@ -19,24 +19,29 @@ export const JsonSchema = {
   required: ['title', 'overview', 'steps'],
   properties: {
     title: {
-      description: 'The title of the how-to guide, specifically a one-line description of what the end-user is attempting to accomplish or do (i.e. How to build a React component).',
+      description:
+        'The title of the how-to guide, specifically a one-line description of what the end-user is attempting to accomplish or do (i.e. How to build a React component).',
       type: 'string'
     },
     overview: {
-      description: 'A detailed description of the how-to guide, specifically what is the end-user attempting to accomplish or do (i.e. How to build a React component).',
+      description:
+        'A detailed description of the how-to guide, specifically what is the end-user attempting to accomplish or do (i.e. How to build a React component).',
       type: 'string'
     },
     need: {
-      description: 'A description of when the user should use this how-to-guide aka when do they "need" it.',
+      description:
+        'A description of when the user should use this how-to-guide aka when do they "need" it.',
       type: 'string'
     },
     requirements: {
-      description: 'A list of requirements that the user must have before they can complete the how-to-guide.',
+      description:
+        'A list of requirements that the user must have before they can complete the how-to-guide.',
       type: 'array',
       items: { type: 'string' }
     },
     steps: {
-      description: 'A list of steps that the user must complete in order to complete the how-to-guide. This can include code snippets or examples.',
+      description:
+        'A list of steps that the user must complete in order to complete the how-to-guide. This can include code snippets or examples.',
       type: 'array',
       items: {
         type: 'object',
@@ -66,7 +71,8 @@ export const JsonSchema = {
       }
     },
     resources: {
-      description: 'A list of resources that the user can use to learn more or that were referenced in the how-to-guide.',
+      description:
+        'A list of resources that the user can use to learn more or that were referenced in the how-to-guide.',
       type: 'array',
       items: {
         type: 'object',
@@ -78,7 +84,8 @@ export const JsonSchema = {
       }
     },
     conclusion: {
-      description: 'A conclusion to the how-to-guide, specifically what the user should have learned or accomplished, and if there are any next steps.',
+      description:
+        'A conclusion to the how-to-guide, specifically what the user should have learned or accomplished, and if there are any next steps.',
       type: 'string'
     }
   }
@@ -96,11 +103,13 @@ export const sample: Data = {
   steps: [
     {
       title: 'Create the template file',
-      content: 'You will need to create the template file in `src/lib/templates` directory. Make sure to follow any naming patterns such as the `how-to-guides` prefix such (i.e. `how-to-guides-basic.ts`).'
+      content:
+        'You will need to create the template file in `src/lib/templates` directory. Make sure to follow any naming patterns such as the `how-to-guides` prefix such (i.e. `how-to-guides-basic.ts`).'
     },
     {
       title: 'Add the basic layout',
-      content: 'Each file requires a JSONSchema object, Schema type, validate function, and sample data object. You can copy the following code snippet to get started.',
+      content:
+        'Each file requires a JSONSchema object, Schema type, validate function, and sample data object. You can copy the following code snippet to get started.',
       code: {
         language: 'javascript',
         contents: `
@@ -130,7 +139,8 @@ export function run(data: Data) {
     },
     {
       title: 'Add unit tests',
-      content: 'You will need to add unit tests for the template. You can copy the following code snippet to get started.',
+      content:
+        'You will need to add unit tests for the template. You can copy the following code snippet to get started.',
       code: {
         language: 'javascript',
         filePath: 'src/lib/templates/__tests__/how-to-guide-basic.test.ts',
@@ -147,7 +157,8 @@ describe('how-to-guide-basic', () => {
     },
     {
       title: 'Build outputs',
-      content: 'You will need to run the build outputs command to output an example markdown template that will be shared. You can run the following command to do so.',
+      content:
+        'You will need to run the build outputs command to output an example markdown template that will be shared. You can run the following command to do so.',
       code: {
         language: 'bash',
         contents: 'npm run build:outputs'
@@ -160,11 +171,9 @@ describe('how-to-guide-basic', () => {
       url: 'https://github.com/ThomasAribart/json-schema-to-ts'
     }
   ],
-  requirements: [
-    'node v20+',
-    'npm v8+'
-  ],
-  conclusion: 'You should now have a basic understanding of how to add a template to marathon. If you have additional questions post and issue on the repo or reach out to the team.'
+  requirements: ['node v20+', 'npm v8+'],
+  conclusion:
+    'You should now have a basic understanding of how to add a template to marathon. If you have additional questions post and issue on the repo or reach out to the team.'
 };
 
 /**
@@ -173,35 +182,28 @@ describe('how-to-guide-basic', () => {
 export function run(data: Data) {
   assert(data);
 
-  const doc = tempo()
-    .h1(data.title)
-    .paragraph(data.overview);
+  const doc = tempo().h1(data.title).paragraph(data.overview);
 
   if (data.requirements && data.requirements.length > 0) {
-    doc
-      .h2('Requirements')
-      .bulletList(data.requirements);
+    doc.h2('Requirements').bulletList(data.requirements);
   }
 
   if (data.need) {
-    doc
-      .h2('When do I need this?')
-      .paragraph(data.need);
+    doc.h2('When do I need this?').paragraph(data.need);
   }
 
   if (data.steps.length > 0) {
     doc.h2('Steps');
     let counter = 1;
     for (const step of data.steps) {
-      doc
-        .h3(`${counter}. ${step.title}`)
-        .paragraph(step.content);
+      doc.h3(`${counter}. ${step.title}`).paragraph(step.content);
 
       if (Object.hasOwn(step, 'code')) {
-        if (Object.hasOwn(step.code, 'filePath') && typeof step.code.filePath === 'string') {
-          doc.h4(txt => txt.code(
-            step.code.filePath as string
-          ));
+        if (
+          Object.hasOwn(step.code, 'filePath') &&
+          typeof step.code.filePath === 'string'
+        ) {
+          doc.h4(txt => txt.code(step.code.filePath as string));
         }
         doc.codeBlock(step.code.contents, step.code.language);
       }
@@ -210,17 +212,15 @@ export function run(data: Data) {
   }
 
   if (data.resources && data.resources.length > 0) {
-    doc
-      .h2('Resources')
-      .bulletList(data.resources.map(resource => {
+    doc.h2('Resources').bulletList(
+      data.resources.map(resource => {
         return txt => txt.link(resource.title, resource.url);
-      }));
+      })
+    );
   }
 
   if (data.conclusion) {
-    doc
-      .h2('Conclusion')
-      .paragraph(data.conclusion);
+    doc.h2('Conclusion').paragraph(data.conclusion);
   }
 
   return doc.toString();

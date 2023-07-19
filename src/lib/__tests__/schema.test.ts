@@ -31,7 +31,7 @@ describe('validate', () => {
     const validate = schema.createValidate({
       type: 'object',
       properties: {
-        name: { type: 'string' },
+        name: { type: 'string' }
       }
     });
 
@@ -48,7 +48,7 @@ describe('validate', () => {
       schema: {
         type: 'object',
         properties: {
-          name: { type: 'string' },
+          name: { type: 'string' }
         }
       },
       valid: false

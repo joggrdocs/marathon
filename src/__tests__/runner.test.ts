@@ -4,14 +4,17 @@ import * as howToGuideBasic from '../lib/templates/how-to-guide-basic';
 // Mocking the howToGuideBasic module
 jest.mock('../lib/templates/how-to-guide-basic', () => ({
   name: 'how-to-guide-basic',
-  run: jest.fn((data: howToGuideBasic.Data) => `${data.title}: ${data.content}`),
+  run: jest.fn((data: howToGuideBasic.Data) => `${data.title}: ${data.content}`)
 }));
 
 describe('render', () => {
   it('should render the correct output for howToGuideBasic template', () => {
     const data = { title: 'Test Title', content: 'Test Content' };
     // @ts-ignore
-    const result = render('how-to-guide-basic', { title: 'Test Title', content: 'Test Content' });
+    const result = render('how-to-guide-basic', {
+      title: 'Test Title',
+      content: 'Test Content'
+    });
     expect(howToGuideBasic.run).toHaveBeenCalledWith(data);
   });
 
@@ -20,7 +23,9 @@ describe('render', () => {
 
     // Ensure that trying to render an unknown template throws an error
     // @ts-ignore
-    expect(() => render(unknownTemplate, {})).toThrow(`Unknown template: ${unknownTemplate}`);
+    expect(() => render(unknownTemplate, {})).toThrow(
+      `Unknown template: ${unknownTemplate}`
+    );
   });
 });
 

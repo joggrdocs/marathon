@@ -1,10 +1,10 @@
 import * as howToGuideBasic from './lib/templates/how-to-guide-basic';
 
-export type Template =
-  | typeof howToGuideBasic.name;
+export type Template = typeof howToGuideBasic.name;
 
-export type TemplateData<T> =
-  T extends typeof howToGuideBasic.name ? howToGuideBasic.Data : never;
+export type TemplateData<T> = T extends typeof howToGuideBasic.name
+  ? howToGuideBasic.Data
+  : never;
 
 export function getTemplate<T = Template>(name: T) {
   switch (name) {

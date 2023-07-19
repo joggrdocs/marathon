@@ -36,7 +36,9 @@ export interface ValidationResult<J extends JSONSchema7, T = boolean> {
   errors: T extends true ? null : AjvErrorObject[];
 }
 
-export function createValidate<J extends JSONSchema7>(schema: J): (data: unknown) => ValidationResult<J> {
+export function createValidate<J extends JSONSchema7>(
+  schema: J
+): (data: unknown) => ValidationResult<J> {
   return (data: unknown) => {
     const validate = createSchemaAjvValidator(schema);
 
@@ -78,7 +80,10 @@ export function createAssertion(schema: JSONSchema7, name?: string) {
   return (data: unknown) => {
     const validate = createSchemaAjvValidator(schema);
     if (!validate(data)) {
-      throw new SchemaError(name ?? 'Unknown Schema', validate.errors as AjvErrorObject[]);
+      throw new SchemaError(
+        name ?? 'Unknown Schema',
+        validate.errors as AjvErrorObject[]
+      );
     }
   };
 }

@@ -1,4 +1,4 @@
-import * as doc from '../how-to-guide-basic'
+import * as doc from '../how-to-guide-basic';
 
 describe('how-to-guide-basic', () => {
   it('matches snapshot', () => {
