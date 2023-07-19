@@ -1,7 +1,7 @@
 {
   "name": "@joggr/marathon",
   "version": "0.1.0",
-  "description": "Standard documentation templates, with a programmatic interface.",
+  "description": "Standard markdown documentation templates, with a programmatic interface.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --coverage",
