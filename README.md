@@ -8,6 +8,28 @@
     </blockquote>
 </div>
 
+<p align="center">
+  <a href="https://badge.fury.io/js/@joggr%2Fmarathon">
+    <img src="https://badge.fury.io/js/@joggr%2Fmarathon.svg" alt="npm version">
+  </a>
+  <a href="https://github.com/joggrdocs/marathon/actions/workflows/github-code-scanning/codeql">
+    <img alt="CodeQL" src="https://github.com/joggrdocs/marathon/actions/workflows/github-code-scanning/codeql/badge.svg">
+  </a>
+  <a href="https://github.com/joggrdocs/marathon/actions/workflows/npm-publish.yaml">
+    <img alt="Publish to npm" src="https://github.com/joggrdocs/marathon/actions/workflows/npm-publish.yaml/badge.svg">
+  </a>
+  <a href="https://github.com/joggrdocs/marathon/actions/workflows/ci.yaml">
+    <img alt="CI" src="https://github.com/joggrdocs/marathon/actions/workflows/ci.yaml/badge.svg">
+  </a>
+  <br/>
+  <a href="https://github.com/standard/semistandard">
+    <img alt="JS Semi-standard Style" src="https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg">
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img alt="Prettier Style" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+</p>
+
 ## Overview
 
 Library of markdown templates for engineering documentation with a programmatic interface.
