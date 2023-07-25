@@ -64,7 +64,11 @@ describe('how-to-guide-basic', () => {
 });
 \`\`\`
 
-### 4. Build outputs
+### 4. Grab a coffee (optional)
+
+Cold brew is the best.
+
+### 5. Build outputs
 
 You will need to run the build outputs command to output an example markdown template that will be shared. You can run the following command to do so.
 
