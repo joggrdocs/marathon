@@ -48,6 +48,7 @@ export const JsonSchema = {
         required: ['title', 'content'],
         properties: {
           title: { type: 'string' },
+          optional: { type: 'boolean', default: false },
           content: { type: 'string' },
           code: {
             type: 'object',
@@ -156,6 +157,11 @@ describe('how-to-guide-basic', () => {
       }
     },
     {
+      title: 'Grab a coffee',
+      optional: true,
+      content: 'Cold brew is the best.'
+    },
+    {
       title: 'Build outputs',
       content:
         'You will need to run the build outputs command to output an example markdown template that will be shared. You can run the following command to do so.',
@@ -196,7 +202,7 @@ export function run(data: Data) {
     doc.h2('Steps');
     let counter = 1;
     for (const step of data.steps) {
-      doc.h3(`${counter}. ${step.title}`).paragraph(step.content);
+      doc.h3(`${counter}. ${step.title}${step.optional ? ' (optional)' : ''}`).paragraph(step.content);
 
       if (Object.hasOwn(step, 'code')) {
         if (
