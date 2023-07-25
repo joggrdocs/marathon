@@ -202,7 +202,9 @@ export function run(data: Data) {
     doc.h2('Steps');
     let counter = 1;
     for (const step of data.steps) {
-      doc.h3(`${counter}. ${step.title}${step.optional ? ' (optional)' : ''}`).paragraph(step.content);
+      doc
+        .h3(`${counter}. ${step.title}${step.optional ? ' (optional)' : ''}`)
+        .paragraph(step.content);
 
       if (Object.hasOwn(step, 'code')) {
         if (
