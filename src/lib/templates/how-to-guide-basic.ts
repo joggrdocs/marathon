@@ -227,7 +227,7 @@ export function run(data: Data) {
         }
         doc.codeBlock(step.code.contents, step.code.language);
       } else if (Object.hasOwn(step, 'image') && !Object.hasOwn(step, 'code')) {
-        doc.image(step.image.src, step.image.alt);
+        doc.image(step.image.alt, step.image.src);
       }
       counter++;
     }
