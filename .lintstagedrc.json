@@ -1,0 +1,8 @@
+{
+  "src/**/*.ts?(x)": ["eslint --fix", "prettier --parser typescript --write"],
+  "packages/**/*.ts?(x)": [
+    "eslint --fix",
+    "prettier --parser typescript --write"
+  ],
+  "*.{md,json,yaml,js}": ["prettier --write"]
+}
