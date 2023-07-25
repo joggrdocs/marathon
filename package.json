@@ -1,6 +1,6 @@
 {
   "name": "@joggr/marathon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Standard markdown documentation templates, with a programmatic interface.",
   "main": "dist/index.js",
   "scripts": {
