@@ -218,7 +218,11 @@ export function run(data: Data) {
         .h3(`${counter}. ${step.title}${step.optional ? ' (optional)' : ''}`)
         .paragraph(step.content);
 
-      if (Object.hasOwn(step, 'code') && !Object.hasOwn(step, 'image')) {
+      if (
+        Object.hasOwn(step, 'code') &&
+        step.code &&
+        !Object.hasOwn(step, 'image')
+      ) {
         if (
           Object.hasOwn(step.code, 'filePath') &&
           typeof step.code.filePath === 'string'
@@ -226,7 +230,11 @@ export function run(data: Data) {
           doc.h4(txt => txt.code(step.code.filePath as string));
         }
         doc.codeBlock(step.code.contents, step.code.language);
-      } else if (Object.hasOwn(step, 'image') && !Object.hasOwn(step, 'code')) {
+      } else if (
+        Object.hasOwn(step, 'image') &&
+        step.image &&
+        !Object.hasOwn(step, 'code')
+      ) {
         doc.image(step.image.alt, step.image.src);
       }
       counter++;
