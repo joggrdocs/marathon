@@ -151,7 +151,7 @@ export function run(data: Data) {
       content:
         'You will need to add unit tests for the template. You can copy the following code snippet to get started.',
       code: {
-        language: 'javascript',
+        language: 'typescript',
         filePath: 'src/lib/templates/__tests__/how-to-guide-basic.test.ts',
         contents: `
 import * as doc from '../how-to-guide-basic'
@@ -218,7 +218,11 @@ export function run(data: Data) {
         .h3(`${counter}. ${step.title}${step.optional ? ' (optional)' : ''}`)
         .paragraph(step.content);
 
-      if (Object.hasOwn(step, 'code') && !Object.hasOwn(step, 'image')) {
+      if (
+        Object.hasOwn(step, 'code') &&
+        step.code &&
+        !Object.hasOwn(step, 'image')
+      ) {
         if (
           Object.hasOwn(step.code, 'filePath') &&
           typeof step.code.filePath === 'string'
@@ -226,7 +230,11 @@ export function run(data: Data) {
           doc.h4(txt => txt.code(step.code.filePath as string));
         }
         doc.codeBlock(step.code.contents, step.code.language);
-      } else if (Object.hasOwn(step, 'image') && !Object.hasOwn(step, 'code')) {
+      } else if (
+        Object.hasOwn(step, 'image') &&
+        step.image &&
+        !Object.hasOwn(step, 'code')
+      ) {
         doc.image(step.image.alt, step.image.src);
       }
       counter++;
