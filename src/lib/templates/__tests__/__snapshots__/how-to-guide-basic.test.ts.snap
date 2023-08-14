@@ -54,7 +54,7 @@ You will need to add unit tests for the template. You can copy the following cod
 
 #### \`src/lib/templates/__tests__/how-to-guide-basic.test.ts\`
 
-\`\`\`javascript
+\`\`\`typescript
 import * as doc from '../how-to-guide-basic'
 
 describe('how-to-guide-basic', () => {

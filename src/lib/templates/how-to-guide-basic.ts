@@ -151,7 +151,7 @@ export function run(data: Data) {
       content:
         'You will need to add unit tests for the template. You can copy the following code snippet to get started.',
       code: {
-        language: 'javascript',
+        language: 'typescript',
         filePath: 'src/lib/templates/__tests__/how-to-guide-basic.test.ts',
         contents: `
 import * as doc from '../how-to-guide-basic'
