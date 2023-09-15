@@ -4,7 +4,7 @@
     </p>
     <hr>
     <blockquote align="center">
-        "It's a marathon, not a sprint." - Coach Campbell
+        "It's a marathon, not a sprint." - <a href="https://en.wikipedia.org/wiki/Matt_Campbell_(American_football_coach)">Coach Campbell</a>
     </blockquote>
 </div>
 
