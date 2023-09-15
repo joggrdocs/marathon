@@ -41,13 +41,13 @@ Library of markdown templates for engineering documentation with a programmatic 
 ## `npm`
 
 ```shell
-npm install @joggrdocs/marathon
+npm install @joggr/marathon
 ```
 
 ## `yarn`
 
 ```shell
-yarn add @joggrdocs/marathon
+yarn add @joggr/marathon
 ```
 
 ## Example
